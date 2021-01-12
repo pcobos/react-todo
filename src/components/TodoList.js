@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const TodoList = () => {
-  const [todos, setTodos] = useState({
-    todos: []
-  })
-
   return(
     <div className="todo-container">
       <ul className="todo-list"></ul>
