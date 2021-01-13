@@ -12,14 +12,16 @@ function App() {
       <header>
         <h1>Pedro's Crazy list</h1>
       </header>
-      {/* passing setInputText method as a prop */}
       <Form 
         inputText={inputText} 
         setInputText={setInputText}
         todos={todos}
         setTodos={setTodos}
       />
-      <TodoList todos={todos}/>
+      <TodoList 
+        todos={todos} 
+        setTodos={setTodos}
+      />
     </div>
   );
 }
