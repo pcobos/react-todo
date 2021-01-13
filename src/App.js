@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Pedro's Todo list</h1>
+        <h1>Pedro's Crazy list</h1>
       </header>
       {/* passing setInputText method as a prop */}
       <Form 

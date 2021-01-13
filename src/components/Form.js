@@ -8,10 +8,29 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
     setInputText(e.target.value);
   }
 
+  const submitTodoHandler = (e) => {
+    e.preventDefault();
+    // Inside this method we want to use our setTodos method to update the state of todos. Don't forget to use the spread operator to get all of the previous info inside the todos state
+    setTodos([
+      ...todos, {text: inputText, completed: false, id: Math.random() * 100}
+    ])
+    // Once we set the state and created an object with the todo info, we will "clean" the input's state by calling setInputText
+    setInputText("");
+  }
+
   return(
     <form>
-      <input onChange={inputTextHandler} type="text" className="todo-input" />
-      <button className="todo-button" type="submit">
+      <input 
+        onChange={inputTextHandler}
+        value={inputText} 
+        type="text" 
+        className="todo-input" 
+      />
+      <button
+        onClick={submitTodoHandler} 
+        className="todo-button" 
+        type="submit"
+      >
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
