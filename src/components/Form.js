@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Form = () => {
+// When passing the setStateMethod to a component as a prop, we have to set it as a parameter for the component as a whole
+const Form = ({ setInputText }) => {
+
+  const inputTextHandler = (e) => {
+    // Called setInputText method to set the input's value as the state
+    setInputText(e.target.value);
+  }
+
   return(
     <form>
-      <input type="text" className="todo-input" />
+      <input onChange={inputTextHandler} type="text" className="todo-input" />
       <button className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>

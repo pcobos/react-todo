@@ -10,7 +10,8 @@ function App() {
       <header>
         <h1>Pedro's Todo list</h1>
       </header>
-      <Form />
+      {/* passing setInputText method as a prop */}
+      <Form setInputText={setInputText}/>
       <TodoList />
     </div>
   );
