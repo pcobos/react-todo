@@ -1,7 +1,7 @@
 import React from 'react';
 
 // When passing the setStateMethod to a component as a prop, we have to set it as a parameter for the component as a whole
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
 
   const inputTextHandler = (e) => {
     // Called setInputText method to set the input's value as the state
@@ -16,6 +16,10 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
     ])
     // Once we set the state and created an object with the todo info, we will "clean" the input's state by calling setInputText
     setInputText("");
+  }
+
+  const selectStatusHandler = (e) => {
+    setStatus(e.target.value);
   }
 
   return(
@@ -34,7 +38,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
-        <select name="todos" className="filter-todo">
+        <select onChange={selectStatusHandler} name="todos" className="filter-todo">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
