@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Form from './components/Form';
 import TodoList from './components/TodoList';
@@ -20,6 +20,7 @@ function App() {
         break;
       default:
         setFilteredTodos(todos);
+        break;
     }
   }
 
